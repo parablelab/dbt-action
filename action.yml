@@ -1,0 +1,25 @@
+name: "dbt-action"
+description: "Automate dbt commands and tests with Github Actions."
+author: "ParableLab"
+
+inputs:
+
+  dbt_command:
+    description: "dbt command"
+    default: "dbt run --profiles-dir ."
+    required: true
+  
+  dbt_project_folder:
+    description: "dbt project folder path, default to root."
+    default: "."
+    required: false
+
+outputs:
+  result:
+    description: "dbt completion status."
+
+runs:
+  using: "docker"
+  image: "docker://parablelab/dbt-action"
+  args:
+    - ${{ inputs.dbt_command }}
