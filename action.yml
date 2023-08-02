@@ -1,4 +1,4 @@
-name: "dbt-action"
+name: "ParableLab dbt Action"
 description: "Automate dbt commands and tests with Github Actions."
 author: "ParableLab"
 
@@ -23,3 +23,7 @@ runs:
   image: "docker://parablelab/dbt-action"
   args:
     - ${{ inputs.dbt_command }}
+
+branding:
+  icon: activity
+  color: black
